@@ -37,7 +37,8 @@ struct DayView: View, MonthlyCalendarManagerDirectAccess {
     }
 
     var body: some View {
-        Text(numericDay)
+        Button(numericDay, action: notifyManager)
+            .buttonStyle(PlainButtonStyle())
             .font(.footnote)
             .foregroundColor(foregroundColor)
             .frame(width: CalendarConstants.Monthly.dayWidth, height: CalendarConstants.Monthly.dayWidth)
@@ -45,7 +46,6 @@ struct DayView: View, MonthlyCalendarManagerDirectAccess {
             .clipShape(Circle())
             .opacity(opacity)
             .overlay(isSelected ? CircularSelectionView() : nil)
-            .onTapGesture(perform: notifyManager)
     }
 
     private var numericDay: String {
