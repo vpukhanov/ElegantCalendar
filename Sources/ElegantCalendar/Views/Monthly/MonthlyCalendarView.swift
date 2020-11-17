@@ -31,6 +31,7 @@ public struct MonthlyCalendarView: View, MonthlyCalendarManagerDirectAccess {
 
     private func content(geometry: GeometryProxy) -> some View {
         CalendarConstants.Monthly.cellWidth = geometry.size.width
+        CalendarConstants.cellHeight = geometry.size.height
 
         return ZStack(alignment: .top) {
             monthsList
