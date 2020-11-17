@@ -6,7 +6,7 @@ let screen = UIScreen.main.bounds
 
 struct CalendarConstants {
 
-    static let cellHeight: CGFloat = screen.height
+    static var cellHeight: CGFloat = screen.height
 
     static let daysInRow: CGFloat = 7
 
