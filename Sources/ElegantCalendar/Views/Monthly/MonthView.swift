@@ -24,21 +24,19 @@ struct MonthView: View, MonthlyCalendarManagerDirectAccess {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 40) {
-                monthYearHeader
+        VStack(spacing: 40) {
+            monthYearHeader
+                .padding(.leading, CalendarConstants.Monthly.outerHorizontalPadding)
+                .onTapGesture { self.communicator?.showYearlyView() }
+            weeksViewWithDaysOfWeekHeader
+            if selectedDate != nil {
+                calenderAccessoryView
                     .padding(.leading, CalendarConstants.Monthly.outerHorizontalPadding)
-                    .onTapGesture { self.communicator?.showYearlyView() }
-                weeksViewWithDaysOfWeekHeader
-                if selectedDate != nil {
-                    calenderAccessoryView
-                        .padding(.leading, CalendarConstants.Monthly.outerHorizontalPadding)
-                        .id(selectedDate!)
-                }
-                Spacer()
+                    .id(selectedDate!)
             }
-            .padding(.top, CalendarConstants.Monthly.topPadding)
+            Spacer()
         }
+        .padding(.top, CalendarConstants.Monthly.topPadding)
         .frame(width: CalendarConstants.Monthly.cellWidth, height: CalendarConstants.cellHeight)
     }
 
