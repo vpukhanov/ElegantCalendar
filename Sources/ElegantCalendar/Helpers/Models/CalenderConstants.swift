@@ -6,7 +6,7 @@ let screen = UIScreen.main.bounds
 
 struct CalendarConstants {
 
-    static let cellHeight: CGFloat = min(screen.height, screen.width)
+    static let cellHeight: CGFloat = screen.height
 
     static let daysInRow: CGFloat = 7
 
@@ -30,7 +30,7 @@ struct CalendarConstants {
 
     struct Yearly {
 
-        static let cellWidth: CGFloat = min(screen.width, screen.height)
+        static let cellWidth: CGFloat = screen.width
         static let horizontalPadding: CGFloat = cellWidth * 0.058
 
         static let outerHorizontalPadding: CGFloat = horizontalPadding + monthWidth/7
