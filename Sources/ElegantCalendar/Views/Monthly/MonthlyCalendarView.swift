@@ -5,7 +5,7 @@ import SwiftUI
 
 public struct MonthlyCalendarView: View, MonthlyCalendarManagerDirectAccess {
 
-    var theme: CalendarTheme = .default
+    var theme: CalendarTheme = CalendarTheme(primary: .primary)
     public var axis: Axis = .vertical
 
     @ObservedObject public var calendarManager: MonthlyCalendarManager

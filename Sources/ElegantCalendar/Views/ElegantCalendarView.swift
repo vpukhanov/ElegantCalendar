@@ -5,7 +5,7 @@ import SwiftUI
 
 public struct ElegantCalendarView: View {
 
-    var theme: CalendarTheme = .default
+    var theme: CalendarTheme = CalendarTheme(primary: .primary)
     public var axis: Axis = .horizontal
 
     public let calendarManager: ElegantCalendarManager
