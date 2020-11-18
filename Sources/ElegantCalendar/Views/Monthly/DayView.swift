@@ -38,7 +38,7 @@ struct DayView: View, MonthlyCalendarManagerDirectAccess {
 
     var body: some View {
         Text(numericDay)
-            .font(.footnote)
+            .font(.body)
             .foregroundColor(foregroundColor)
             .frame(width: CalendarConstants.Monthly.dayWidth, height: CalendarConstants.Monthly.dayWidth)
             .background(backgroundColor)
